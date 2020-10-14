@@ -3,19 +3,26 @@ import { Appbar } from 'react-native-paper';
 import { View, StyleSheet, Dimensions } from 'react-native';
 import { TabBar, TabView, SceneMap } from 'react-native-tab-view';
 
+import Chat from './source/pages/chat'; 
+import Status from './source/pages/status'
+import Calls from './source/pages/calls';
 
 const chatRoute = () => (
-  <View style={[styles.scene, { backgroundColor: '#e1ebe4' }]} >
-  {/* <Chat/> */}
+  <View style={[styles.scene, { backgroundColor: '#c8ccc8' }]} >
+  <Chat/>
   </View>
 );
 
 const statusRoute = () => (
-  <View style={[styles.scene, { backgroundColor: '#e1ebe4' }]} />
+  <View style={[styles.scene, { backgroundColor: '#c8ccc8' }]} >
+  <Status/>
+  </View>
 );
 
 const callsRoute = () => (
-  <View style={[styles.scene, { backgroundColor: '#e1ebe4' }]} />
+  <View style={[styles.scene, { backgroundColor: '#c8ccc8' }]} >
+  <Calls/>
+  </View>
 );
 
 const initialLayout = { width: Dimensions.get('window').width };
@@ -39,9 +46,23 @@ const App = () => {
     calls: callsRoute,
   });
 
+  const renderTabBar = props => (
+    <TabBar
+      {...props}
+      indicatorStyle={{ backgroundColor: '#1fc21f' }}
+      style={{ backgroundColor: '#1fc21f' }}
+    />
+  );
+
   return (
     <>
-    <Appbar.Header>
+    <Appbar.Header
+    style={{ 
+      backgroundColor: '#1fc21f', 
+      color: "white",
+      paddingLeft: 20
+      }}>
+      
       {/* <Appbar.BackAction onPress={_goBack} /> */}
       <Appbar.Content title="WhatsApp KW" subtitle="v.1.0" />
       <Appbar.Action icon="magnify" onPress={_handleSearch} />
@@ -51,6 +72,7 @@ const App = () => {
     <TabView
     navigationState={{ index, routes }}
     renderScene={renderScene}
+    renderTabBar={renderTabBar}
     onIndexChange={setIndex}
     initialLayout={initialLayout}
     />
