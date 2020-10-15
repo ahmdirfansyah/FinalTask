@@ -6,6 +6,7 @@ import { TabBar, TabView, SceneMap } from 'react-native-tab-view';
 import Chat from './source/pages/chat'; 
 import Status from './source/pages/status'
 import Calls from './source/pages/calls';
+import Api from './source/pages/api';
 
 const chatRoute = () => (
   <View style={[styles.scene, { backgroundColor: '#c8ccc8' }]} >
@@ -25,6 +26,12 @@ const callsRoute = () => (
   </View>
 );
 
+const APICallRoute = () => (
+  <View style={[styles.scene, { backgroundColor: '#c8ccc8' }]} >
+  <Api />
+  </View>
+);
+
 const initialLayout = { width: Dimensions.get('window').width };
 
 const App = () => {
@@ -38,12 +45,14 @@ const App = () => {
     { key: 'chat', title: 'CHAT' },
     { key: 'status', title: 'STATUS' },
     { key: 'calls', title: 'CALLS' },
+    { key: 'apicall', title: 'GET API' },
   ]);
 
   const renderScene = SceneMap({
     chat: chatRoute,
     status: statusRoute,
     calls: callsRoute,
+    apicall: APICallRoute,
   });
 
   const renderTabBar = props => (
