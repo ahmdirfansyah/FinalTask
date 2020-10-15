@@ -8,7 +8,7 @@ const Chat = () => {
   return (
     <View>
         <List.Section>
-            <List.Item title="Ahmad Irfansyah" description="Assalamu'alaikum" left={props => <Avatar.Image size={55} source={user}  />} right={props => <Badge>1250</Badge> } onPress={()=>{ToastAndroid.show("Chat Pressed", ToastAndroid.SHORT)}}/>
+            <List.Item title="Ahmad Irfansyah" description="Assalamu'alaikum" left={props => <Avatar.Image size={55} source={user}  />} right={props => <Badge>69</Badge> } onPress={()=>{ToastAndroid.show("Chat Pressed", ToastAndroid.SHORT)}}/>
             <Divider />
             <List.Item title="M. Rizki Novriandri" description="Assalamu'alaikum" left={props => <Avatar.Text size={55} label="RN"  />} right={props => <Text>01.00</Text>} onPress={()=>{ToastAndroid.show("Chat Pressed", ToastAndroid.SHORT)}}/>
             <Divider />

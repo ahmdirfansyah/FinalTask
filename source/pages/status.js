@@ -11,7 +11,7 @@ const Status = () => {
     <View>
       <List.Section>
           <List.Item title="My status" description="Tap to add status update" left={props => <Avatar.Image size={55} source={user}  />} onPress={()=>{ToastAndroid.show("Trying to Update Status", ToastAndroid.SHORT)}}/>
-          <Divider />
+          {/* <Divider /> */}
           <List.Subheader>Recent updates</List.Subheader>
           <Divider />
           <List.Item title="Ahmad Irfansyah" description="7 Minutes ago" left={props => <Avatar.Image size={55} source={user}  />} onPress={()=>{ToastAndroid.show("Update shown", ToastAndroid.SHORT)}}/>

@@ -11,6 +11,7 @@ import {
     StyleSheet,
 } from "react-native";
 import { List, Colors, Avatar, Badge, Divider } from 'react-native-paper';
+import { ListItem } from 'react-native-elements';
 
 class ApiContainer extends Component {
     constructor(props) {
@@ -68,7 +69,7 @@ class ApiContainer extends Component {
         return (
             <View style={{
                 height: .5,
-                width: "100%",
+                width: "1000%",
                 backgroundColor: "rgba(0,0,0,0.5)",
             }}
             />
@@ -82,11 +83,18 @@ class ApiContainer extends Component {
             //     <Text style={styles.lightText}>{data.item.avatar}</Text>
             // </TouchableOpacity>
             <View>
-            <List.Section>
-                <List.Item title={data.item.name} description={data.item.comment} left={props => <Avatar.Image size={55} source={data.item.avatar} />} onPress={()=>{ToastAndroid.show("Chat Pressed", ToastAndroid.SHORT)}}/>
+            {/* <List.Section> */}
+                {/* <List.Item title={data.item.name} description={data.item.comment} left={props => <Avatar.Image size={55} source={data.item.avatar} />} onPress={()=>{ToastAndroid.show("Chat Pressed", ToastAndroid.SHORT)}}/> */}
                 {/* <Divider /> */}
-                
-            </List.Section>
+                <ListItem 
+                leftAvatar={{source: { uri : data.item.avatar }}}
+                size={2000}
+                title={data.item.name}
+                subtitle={data.item.comment}
+                onPress={() => console.log("Chat Pressed")}
+                />
+                <Divider/>
+            {/* </List.Section> */}
             {/* <Avatar rounded source={data.item.avatar}/> */}
         </View>
         )
