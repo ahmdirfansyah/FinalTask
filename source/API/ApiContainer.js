@@ -5,8 +5,13 @@ import styles from './ApiStyles';
 import {
     View,
     Text,
-    TouchableOpacity
+    TouchableOpacity,
+    Dimensions,
+    ToastAndroid,
+    StyleSheet,
 } from "react-native";
+import { List, Colors, Avatar, Badge, Divider } from 'react-native-paper';
+
 class ApiContainer extends Component {
     constructor(props) {
         super(props);
@@ -57,6 +62,7 @@ class ApiContainer extends Component {
             .catch(error => {
                 console.log(error);
             });
+            
     }
     FlatListSeparator = () => {
         return (
@@ -70,11 +76,19 @@ class ApiContainer extends Component {
     }
     renderItem = (data) => {
         return (
-            <TouchableOpacity style={styles.list}>
-                <Text style={styles.lightText}>{data.item.name}</Text>
-                <Text style={styles.lightText}>{data.item.comment}</Text>
-                {/* <Text style={styles.lightText}>{data.item.company.name}</Text> */}
-            </TouchableOpacity>
+            // <TouchableOpacity style={styles.list}>
+            //     <Text style={styles.lightText}>{data.item.name}</Text>
+            //     <Text style={styles.lightText}>{data.item.comment}</Text>
+            //     <Text style={styles.lightText}>{data.item.avatar}</Text>
+            // </TouchableOpacity>
+            <View>
+            <List.Section>
+                <List.Item title={data.item.name} description={data.item.comment} left={props => <Avatar.Image size={55} source={data.item.avatar} />} onPress={()=>{ToastAndroid.show("Chat Pressed", ToastAndroid.SHORT)}}/>
+                {/* <Divider /> */}
+                
+            </List.Section>
+            {/* <Avatar rounded source={data.item.avatar}/> */}
+        </View>
         )
 
     }

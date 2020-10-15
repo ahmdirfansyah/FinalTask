@@ -8,7 +8,7 @@ const styles = {
         justifyContent: 'center',
     },
     textStyle:{
-        fontSize:18,
+        fontSize:14,
         textAlign:'center',
         paddingTop:32
     },
@@ -16,14 +16,14 @@ const styles = {
         backgroundColor: "#fff"
     },
     loader: {
-        flex:1,
+        flex:2,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#fff"
+        // backgroundColor: "#fff"
     },
     list: {
-        paddingVertical: 4,
-        margin: 5,
+        paddingVertical: 1,
+        margin: 3,
         backgroundColor: "#fff"
     }
 };
